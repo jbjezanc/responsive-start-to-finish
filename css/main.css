@@ -361,6 +361,12 @@ img {
   margin: 0 auto;
 }
 
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 0.75em;
 }
@@ -399,19 +405,16 @@ h2 {
 
 .main-header {
   position: absolute;
-  top: 1em;
+  top: 0;
   left: 0;
   right: 0;
+  padding-top: 1em;
 }
 
 .logo {
   width: 25%;
   min-width: 10rem;
   max-width: 15rem;
-}
-
-.main-nav {
-  display: none;
 }
 
 .hero {
@@ -427,6 +430,32 @@ h2 {
 
 .grid {
   display: flex;
+}
+
+.main-nav {
+  background: rgb(211, 24, 105);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.2rem;
+}
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+.main-nav li {
+  flex: 1 1 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 .btn {
