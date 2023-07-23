@@ -368,6 +368,16 @@ img {
   list-style: none;
 }
 
+.lg-screen {
+  display: none;
+}
+
+.bg-primary {
+  background: rgb(4, 140, 160);
+  color: rgb(255, 255, 255);
+  padding: 5em 2.5em;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 0.75em;
 }
@@ -383,6 +393,7 @@ h1 {
   font-weight: 300;
   line-height: 1.15;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 h2 {
@@ -398,6 +409,28 @@ h2 {
 }
 .title-large span {
   font-weight: 300;
+}
+
+.title-box {
+  background: rgb(211, 24, 105);
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  padding: 2em;
+  transform: translateY(30%);
+  max-width: 90%;
+}
+@media (min-width: 495px) {
+  .title-box {
+    transform: translateY(50%);
+  }
+}
+.title-box + .bg-primary {
+  padding-top: 6em;
+}
+@media (max-width: 495px) {
+  .title-box + .bg-primary {
+    padding-top: 8em;
+  }
 }
 
 .text-intro {
@@ -424,9 +457,6 @@ h2 {
   padding-top: 8em;
   padding-bottom: 8em;
   text-align: center;
-}
-.hero .hero-img {
-  display: none;
 }
 
 .grid {
@@ -515,21 +545,16 @@ h2 {
   opacity: 0;
 }
 
-.promo {
-  padding: 10vh 0;
-}
-
 .sales-points {
-  padding: 10vh 0;
+  padding: 10vh 0 0;
 }
-
-.sales-point {
+.sales-points .sales-point {
   margin-bottom: 2.5em;
 }
-.sales-point:first-of-type {
+.sales-points .sales-point:first-of-type {
   margin-top: 1.5em;
 }
-.sales-point:last-child {
+.sales-points .sales-point:last-child {
   margin-bottom: 0;
 }
 
