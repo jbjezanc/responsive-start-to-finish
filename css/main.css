@@ -348,6 +348,7 @@ template {
 
 body {
   color: rgb(4, 140, 160);
+  text-align: center;
 }
 
 img {
@@ -430,6 +431,15 @@ h2 {
 
 .grid {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 0 0 100%;
+}
+
+.col-full {
+  flex: 0 0 100%;
 }
 
 .main-nav {
@@ -503,6 +513,24 @@ h2 {
 }
 .hamburger.is-open::before {
   opacity: 0;
+}
+
+.promo {
+  padding: 10vh 0;
+}
+
+.sales-points {
+  padding: 10vh 0;
+}
+
+.sales-point {
+  margin-bottom: 2.5em;
+}
+.sales-point:first-of-type {
+  margin-top: 1.5em;
+}
+.sales-point:last-child {
+  margin-bottom: 0;
 }
 
 .btn {
