@@ -535,21 +535,44 @@ h2 {
   background: rgb(211, 24, 105);
   position: absolute;
   top: 0;
-  left: 100%;
   right: 0;
+  left: 100%;
   font-size: 1.2rem;
   overflow: hidden;
-  transition: all ease-in-out 250ms;
+  transition: nav-toggle ease-in-out 250ms;
+}
+@media (min-width: 725px) {
+  .main-nav {
+    position: relative;
+    flex: auto;
+    background: none;
+    margin-top: 1em;
+    margin-left: 2em;
+    left: 0;
+  }
 }
 .main-nav ul {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
+@media (min-width: 725px) {
+  .main-nav ul {
+    flex-direction: row;
+    height: auto;
+  }
+}
 .main-nav li {
   flex: 1 1 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   display: flex;
+}
+@media (min-width: 725px) {
+  .main-nav li {
+    display: inline-block;
+    border: none;
+    text-align: right;
+  }
 }
 .main-nav a {
   color: rgb(255, 255, 255);
@@ -559,8 +582,19 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 725px) {
+  .main-nav a {
+    display: inline;
+  }
+}
 .main-nav a:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 725px) {
+  .main-nav a:hover {
+    background: none;
+    color: #8e1047;
+  }
 }
 .main-nav.is-open {
   left: 0;
@@ -573,6 +607,11 @@ h2 {
   right: 1em;
   top: 1em;
   cursor: pointer;
+}
+@media (min-width: 725px) {
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .hamburger,
@@ -670,12 +709,15 @@ footer a {
 .nav-footer {
   display: flex;
   justify-content: space-around;
-  width: 80%;
   margin: 0 auto;
 }
 .nav-footer a {
   text-decoration: none;
   font-weight: 700;
+}
+
+.container--footer {
+  max-width: 25em;
 }
 
 .btn {
@@ -695,6 +737,7 @@ footer a {
 }
 .btn--primary:hover, .btn--primary:focus {
   background: #8e1047;
+  border-color: #8e1047;
 }
 
 .btn--secondary {
@@ -714,4 +757,35 @@ footer a {
   padding: 5em 0;
   background-blend-mode: multiply;
   color: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 725px) {
+  .cta {
+    padding: 10em 0;
+  }
+  .cta::before, .cta::after {
+    content: "";
+    display: block;
+    background: rgb(211, 24, 105);
+    position: absolute;
+    width: 100%;
+    border: 1em solid rgb(255, 255, 255);
+  }
+  .cta::before {
+    top: 0;
+    bottom: -1em;
+    transform: skewX(60deg);
+    left: -100%;
+  }
+  .cta::after {
+    top: -1em;
+    bottom: 0;
+    transform: skewX(60deg);
+    right: -100%;
+  }
+}
+
+.container--cta {
+  width: 70%;
 }
